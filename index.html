@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINA Skincare — ผิวเรืองแสง ทุกวัน | AI Skincare Advisor 24/7</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="LUMINA Skincare — สกินแคร์คุณภาพพรีเมียมจากธรรมชาติ ครีมบำรุง คลีนเซอร์ กันแดด มาส์กหน้า มี AI Sales 'โนวา' ช่วยแนะนำ 24 ชั่วโมง ส่งฟรีทั่วไทย">
+  <meta name="keywords" content="LUMINA, สกินแคร์, ครีมบำรุง, กันแดด SPF50, วิตามินซีเซรั่ม, มาส์กหน้า, AI Sales, โนวา">
+  <meta name="author" content="LUMINA Skincare">
+  <meta name="theme-color" content="#e8a4a4">
+
+  <!-- Open Graph (Facebook/Line) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LUMINA Skincare — ผิวเรืองแสง ทุกวัน">
+  <meta property="og:description" content="สกินแคร์พรีเมียม + AI Sales 'โนวา' แนะนำตลอด 24 ชั่วโมง">
+  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23e8a4a4'/><stop offset='100%25' stop-color='%23c9a87c'/></linearGradient></defs><rect width='1200' height='630' fill='url(%23g)'/><text x='50%25' y='42%25' text-anchor='middle' fill='white' font-family='Arial' font-size='120' font-weight='900' letter-spacing='10'>LUMINA</text><text x='50%25' y='55%25' text-anchor='middle' fill='white' font-family='Arial' font-size='40'>ผิวเรืองแสง ทุกวัน</text><text x='50%25' y='70%25' text-anchor='middle' fill='white' font-family='Arial' font-size='28' opacity='0.85'>✨ AI Skincare Advisor 24/7 ✨</text></svg>">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LUMINA Skincare — ผิวเรืองแสง ทุกวัน">
+  <meta name="twitter:description" content="สกินแคร์พรีเมียม + AI Sales 24 ชั่วโมง">
+
+  <!-- Favicon (SVG inline — flower emoji) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='f' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23e8a4a4'/><stop offset='100%25' stop-color='%23c9a87c'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23f)'/><text x='50%25' y='62%25' text-anchor='middle' fill='white' font-family='Arial' font-size='52' font-weight='900' letter-spacing='-2'>L</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='f' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23e8a4a4'/><stop offset='100%25' stop-color='%23c9a87c'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23f)'/><text x='50%25' y='62%25' text-anchor='middle' fill='white' font-family='Arial' font-size='52' font-weight='900' letter-spacing='-2'>L</text></svg>">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://lumina-proxy.kritsada-nutt1981.workers.dev">
+  <link rel="preconnect" href="https://hdpjwegiorofmferhlhq.supabase.co">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rose:    #e8a4a4;
+      --rose-d:  #c97c7c;
+      --cream:   #fdf6f0;
+      --nude:    #f5ede6;
+      --gold:    #c9a87c;
+      --gold-l:  #e8d5b5;
+      --text:    #3d2b2b;
+      --text-s:  #7a5c5c;
+      --white:   #ffffff;
+    }
+
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: var(--cream); color: var(--text); }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,246,240,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gold-l);
+      padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900; color: white; letter-spacing: -1px;
+    }
+    .nav-logo span { font-size: 20px; font-weight: 800; color: var(--text); letter-spacing: 3px; }
+    .nav-logo small { font-size: 9px; color: var(--gold); letter-spacing: 2px; display: block; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-s); font-size: 14px; transition: color .2s; }
+    .nav-links a:hover { color: var(--rose-d); }
+    .nav-chat-btn {
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: white; border: none; border-radius: 20px;
+      padding: 9px 20px; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: opacity .2s;
+    }
+    .nav-chat-btn:hover { opacity: 0.85; }
+    .nav-toggle {
+      display: none;
+      background: none; border: none; cursor: pointer;
+      font-size: 24px; color: var(--text);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 88vh;
+      background: linear-gradient(135deg, #fdf0f0 0%, #fdf6f0 40%, #f9f0e8 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 60px 20px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(232,164,164,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -40px; left: -40px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,168,124,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 640px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232,164,164,0.2); border: 1px solid var(--rose);
+      color: var(--rose-d); border-radius: 20px; padding: 5px 16px;
+      font-size: 12px; letter-spacing: 2px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 900; letter-spacing: 6px;
+      background: linear-gradient(135deg, var(--rose-d), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    .hero-tagline {
+      font-size: 18px; color: var(--text-s); margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .hero-sub { font-size: 14px; color: #aaa; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: white; border: none; border-radius: 28px;
+      padding: 14px 32px; font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: all .2s; box-shadow: 0 4px 20px rgba(232,164,164,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(232,164,164,0.5); }
+    .btn-outline {
+      background: transparent;
+      color: var(--rose-d); border: 2px solid var(--rose);
+      border-radius: 28px; padding: 14px 32px; font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all .2s;
+    }
+    .btn-outline:hover { background: var(--rose); color: white; }
+    .hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 26px; font-weight: 900; color: var(--rose-d); }
+    .stat-label { font-size: 12px; color: var(--text-s); }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 80px 40px; }
+    .section-label { font-size: 11px; letter-spacing: 3px; color: var(--rose-d); text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-size: clamp(24px, 4vw, 36px); font-weight: 800; color: var(--text); margin-bottom: 12px; }
+    .section-sub { font-size: 15px; color: var(--text-s); max-width: 480px; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header .section-sub { margin: 0 auto; }
+
+    /* ===== CATALOG ===== */
+    #catalog { background: var(--white); }
+    .cat-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+    .cat-tab {
+      padding: 8px 20px; border-radius: 20px; border: 1.5px solid var(--gold-l);
+      background: transparent; font-size: 13px; color: var(--text-s);
+      cursor: pointer; transition: all .2s;
+    }
+    .cat-tab.active, .cat-tab:hover {
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: white; border-color: transparent;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px; max-width: 1000px; margin: 0 auto;
+    }
+    .product-card {
+      background: var(--cream); border-radius: 16px;
+      padding: 20px; transition: all .25s; cursor: pointer;
+      border: 1.5px solid transparent;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(201,124,124,0.15);
+      border-color: var(--rose);
+    }
+    .product-emoji { font-size: 42px; margin-bottom: 14px; display: block; }
+    .product-cat { font-size: 10px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+    .product-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .product-desc { font-size: 12px; color: var(--text-s); margin-bottom: 14px; line-height: 1.5; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
+    .product-price { font-size: 18px; font-weight: 800; color: var(--rose-d); }
+    .product-price small { font-size: 11px; font-weight: 400; color: var(--text-s); }
+    .add-btn {
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: white; border: none; border-radius: 10px;
+      padding: 7px 14px; font-size: 12px; font-weight: 600;
+      cursor: pointer; transition: opacity .2s;
+    }
+    .add-btn:hover { opacity: 0.85; }
+
+    /* ===== HOW IT WORKS ===== */
+    #how { background: var(--nude); }
+    .steps { display: flex; gap: 24px; max-width: 900px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .step {
+      flex: 1; min-width: 200px; max-width: 240px;
+      background: white; border-radius: 16px; padding: 28px 20px; text-align: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    }
+    .step-icon { font-size: 36px; margin-bottom: 14px; }
+    .step-num { font-size: 10px; letter-spacing: 2px; color: var(--rose-d); font-weight: 700; margin-bottom: 8px; }
+    .step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .step-desc { font-size: 13px; color: var(--text-s); line-height: 1.5; }
+
+    /* ===== TESTIMONIALS ===== */
+    #reviews { background: var(--white); }
+    .reviews-grid { display: flex; gap: 20px; max-width: 900px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .review-card {
+      flex: 1; min-width: 240px; max-width: 280px;
+      background: var(--cream); border-radius: 16px; padding: 24px;
+    }
+    .review-stars { color: var(--gold); font-size: 14px; margin-bottom: 10px; }
+    .review-text { font-size: 13px; color: var(--text-s); line-height: 1.6; margin-bottom: 14px; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 10px; }
+    .review-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: white; font-weight: 700;
+    }
+    .review-name { font-size: 13px; font-weight: 700; }
+    .review-tag { font-size: 11px; color: var(--text-s); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.7);
+      text-align: center; padding: 30px 20px; font-size: 13px;
+    }
+    footer strong { color: white; letter-spacing: 2px; }
+
+    /* ===== CHAT WIDGET ===== */
+    .chat-fab {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      border: none; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(232,164,164,0.5);
+      font-size: 26px; display: flex; align-items: center; justify-content: center;
+      transition: all .3s;
+      animation: float 3s ease-in-out infinite;
+    }
+    .chat-fab:hover { transform: scale(1.1); }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+    .chat-badge {
+      position: absolute; top: -4px; right: -4px;
+      background: #4ade80; color: white;
+      width: 18px; height: 18px; border-radius: 50%;
+      font-size: 10px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid var(--cream);
+    }
+
+    .chat-window {
+      position: fixed; bottom: 100px; right: 28px; z-index: 998;
+      width: 370px; height: 560px;
+      background: white; border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      transition: all .3s;
+      transform: scale(0); transform-origin: bottom right; opacity: 0;
+    }
+    .chat-window.open { transform: scale(1); opacity: 1; }
+
+    .chat-header {
+      background: linear-gradient(135deg, var(--rose-d), var(--gold));
+      padding: 16px 18px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .chat-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .chat-header-info { flex: 1; }
+    .chat-header-name { font-size: 15px; font-weight: 700; color: white; }
+    .chat-header-status { font-size: 11px; color: rgba(255,255,255,0.8); }
+    .chat-close { background: none; border: none; color: white; font-size: 20px; cursor: pointer; opacity: 0.8; }
+    .chat-close:hover { opacity: 1; }
+
+    .chat-messages {
+      flex: 1; overflow-y: auto; padding: 16px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .msg { display: flex; gap: 8px; align-items: flex-end; }
+    .msg.user { flex-direction: row-reverse; }
+    .msg-avatar {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      display: flex; align-items: center; justify-content: center; font-size: 13px;
+    }
+    .msg-bubble {
+      max-width: 72%; padding: 10px 13px;
+      border-radius: 16px; font-size: 13px; line-height: 1.5;
+    }
+    .msg.bot .msg-bubble { background: var(--nude); color: var(--text); border-bottom-left-radius: 4px; }
+    .msg.user .msg-bubble { background: linear-gradient(135deg, var(--rose-d), var(--gold)); color: white; border-bottom-right-radius: 4px; }
+    .msg-name { font-size: 10px; color: var(--text-s); margin-bottom: 3px; }
+
+    .quick-replies { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 10px; }
+    .qr-btn {
+      background: var(--nude); border: 1px solid var(--rose);
+      color: var(--rose-d); border-radius: 14px;
+      padding: 5px 12px; font-size: 12px; cursor: pointer; transition: all .15s;
+    }
+    .qr-btn:hover { background: var(--rose); color: white; }
+
+    .chat-input-bar {
+      padding: 12px 16px;
+      border-top: 1px solid var(--nude);
+      display: flex; gap: 8px; align-items: flex-end;
+    }
+    .chat-input {
+      flex: 1; border: 1.5px solid var(--gold-l); border-radius: 12px;
+      padding: 9px 13px; font-size: 13px; resize: none;
+      font-family: inherit; max-height: 80px;
+      background: var(--cream);
+    }
+    .chat-input:focus { outline: none; border-color: var(--rose); }
+    .send-btn {
+      width: 38px; height: 38px; border-radius: 50%; border: none;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: white; font-size: 16px; cursor: pointer; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity .2s;
+    }
+    .send-btn:hover { opacity: 0.85; }
+    .send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* typing indicator */
+    .typing { display: flex; gap: 5px; padding: 4px 0; }
+    .typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--rose); animation: blink 1.2s infinite; }
+    .typing span:nth-child(2) { animation-delay: .2s; }
+    .typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes blink { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+
+    /* ===== ORDER MODAL ===== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+      z-index: 9000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .2s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: white; border-radius: 20px; padding: 30px;
+      width: 90%; max-width: 400px;
+      transform: translateY(20px); transition: transform .2s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .modal p { font-size: 13px; color: var(--text-s); margin-bottom: 20px; }
+    .modal input, .modal textarea {
+      width: 100%; border: 1.5px solid var(--gold-l); border-radius: 10px;
+      padding: 10px 14px; font-size: 13px; margin-bottom: 12px;
+      font-family: inherit;
+    }
+    .modal input:focus, .modal textarea:focus { outline: none; border-color: var(--rose); }
+    .modal-btns { display: flex; gap: 10px; }
+    .modal-cancel {
+      flex: 1; background: var(--nude); border: 1px solid var(--gold-l);
+      border-radius: 10px; padding: 10px; cursor: pointer; font-size: 14px;
+    }
+    .modal-confirm {
+      flex: 2;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: white; border: none; border-radius: 10px;
+      padding: 10px; cursor: pointer; font-size: 14px; font-weight: 700;
+    }
+
+    /* ===== CART BADGE ===== */
+    .cart-indicator {
+      position: fixed; top: 20px; right: 20px; z-index: 200;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      color: white; border-radius: 20px; padding: 6px 16px;
+      font-size: 13px; font-weight: 700; display: none;
+      box-shadow: 0 4px 16px rgba(232,164,164,0.4);
+      cursor: pointer;
+    }
+
+    /* Scrollbar */
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--gold-l); border-radius: 2px; }
+
+    /* ===== SLIP UPLOAD ===== */
+    .attach-btn {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      border: 1.5px solid var(--gold-l); background: var(--nude);
+      font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, border-color .2s;
+    }
+    .attach-btn:hover { background: var(--rose-l, #fce8e8); border-color: var(--rose); }
+
+    .slip-preview-bar {
+      display: none; align-items: center; gap: 10px;
+      padding: 8px 16px; background: var(--nude);
+      border-top: 1px solid var(--gold-l);
+    }
+    .slip-preview-bar img {
+      height: 48px; width: 48px; object-fit: cover;
+      border-radius: 8px; border: 1.5px solid var(--gold-l); flex-shrink: 0;
+    }
+    .slip-preview-name {
+      flex: 1; font-size: 11px; color: var(--text-s);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .slip-clear-btn {
+      background: none; border: none; color: var(--text-s);
+      cursor: pointer; font-size: 18px; padding: 0; line-height: 1;
+      flex-shrink: 0;
+    }
+    .slip-clear-btn:hover { color: var(--rose); }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 12px 18px; }
+      .nav-logo span { font-size: 17px; letter-spacing: 2px; }
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--gold-l);
+        padding: 14px 20px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; border-bottom: 1px solid var(--gold-l); width: 100%; }
+      .nav-chat-btn { width: 100%; margin-top: 8px; }
+
+      section { padding: 50px 20px; }
+      .hero { min-height: 75vh; padding: 40px 20px; }
+      .hero-stats { gap: 24px; margin-top: 30px; }
+      .stat-num { font-size: 22px; }
+
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+      .product-card { padding: 14px; }
+      .product-emoji { font-size: 32px; margin-bottom: 10px; }
+
+      /* Chat window fullscreen on mobile */
+      .chat-window {
+        bottom: 0; right: 0; left: 0;
+        width: 100%; height: 100%;
+        border-radius: 0;
+        transform-origin: center;
+      }
+      .chat-fab { bottom: 20px; right: 20px; width: 54px; height: 54px; font-size: 24px; }
+      .cart-indicator { top: 14px; right: 14px; font-size: 12px; padding: 5px 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { letter-spacing: 4px; }
+      .hero-tagline { font-size: 16px; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-outline { width: 100%; padding: 13px 24px; }
+      .steps { gap: 14px; }
+      .step { padding: 22px 16px; }
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      .chat-fab { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">L</div>
+    <div>
+      <span>LUMINA</span>
+      <small>SKINCARE</small>
+    </div>
+  </div>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="เมนู">☰</button>
+  <div class="nav-links" id="nav-links">
+    <a href="#catalog" onclick="closeNav()">สินค้า</a>
+    <a href="#how" onclick="closeNav()">วิธีสั่ง</a>
+    <a href="#reviews" onclick="closeNav()">รีวิว</a>
+    <button class="nav-chat-btn" onclick="toggleChat(); closeNav()">💬 คุยกับโนวา</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✨ NATURAL GLOW SKINCARE</div>
+    <h1>LUMINA</h1>
+    <p class="hero-tagline">ผิวเรืองแสง ทุกวัน</p>
+    <p class="hero-sub">สกินแคร์คุณภาพพรีเมียม ดูแลผิวอย่างอ่อนโยน<br>ด้วยส่วนผสมจากธรรมชาติ เพื่อผิวสวยที่ใช่ของคุณ</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">🛍️ ดูสินค้าทั้งหมด</button>
+      <button class="btn-outline" onclick="toggleChat()">💬 ถามโนวา</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4,200+</div><div class="stat-label">ลูกค้าพึงพอใจ</div></div>
+      <div class="stat"><div class="stat-num">98%</div><div class="stat-label">รีวิวดีเยี่ยม</div></div>
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">ผลิตภัณฑ์เด่น</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog">
+  <div class="section-header">
+    <div class="section-label">PRODUCT CATALOG</div>
+    <div class="section-title">ผลิตภัณฑ์ดูแลผิวของเรา</div>
+    <p class="section-sub">คัดสรรส่วนผสมคุณภาพสูง เพื่อผิวที่สุขภาพดีและเรืองแสงทุกวัน</p>
+  </div>
+  <div class="cat-tabs">
+    <button class="cat-tab active" onclick="filterCat(this, 'all')">ทั้งหมด</button>
+    <button class="cat-tab" onclick="filterCat(this, 'cream')">ครีมบำรุง</button>
+    <button class="cat-tab" onclick="filterCat(this, 'cleanser')">คลีนเซอร์</button>
+    <button class="cat-tab" onclick="filterCat(this, 'sun')">กันแดด</button>
+    <button class="cat-tab" onclick="filterCat(this, 'mask')">มาส์กหน้า</button>
+  </div>
+  <div class="products-grid" id="products-grid"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-header">
+    <div class="section-label">HOW TO ORDER</div>
+    <div class="section-title">สั่งง่าย ใน 4 ขั้นตอน</div>
+    <p class="section-sub">โนวา AI ช่วยดูแลคุณตลอด 24 ชั่วโมง</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">💬</div>
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">ทักหาโนวา</div>
+      <div class="step-desc">แชทถามข้อมูลสินค้า หรือบอกว่าอยากได้อะไรได้เลย</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🛒</div>
+      <div class="step-num">STEP 02</div>
+      <div class="step-title">เลือกสินค้า</div>
+      <div class="step-desc">โนวาแนะนำสินค้าที่เหมาะกับผิวและความต้องการของคุณ</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">📱</div>
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">ชำระเงิน</div>
+      <div class="step-desc">โอนผ่าน PromptPay แล้วส่งสลิปให้โนวาตรวจสอบ</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">📦</div>
+      <div class="step-num">STEP 04</div>
+      <div class="step-title">รับสินค้า</div>
+      <div class="step-desc">จัดส่งภายใน 1-2 วันทำการ มีเลขพัสดุแจ้งทุกครั้ง</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-header">
+    <div class="section-label">REVIEWS</div>
+    <div class="section-title">เสียงจากลูกค้าจริง</div>
+    <p class="section-sub">ความไว้วางใจจากลูกค้ากว่า 4,200 คน</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"ใช้ Hydra Glow Cream แล้วผิวชุ่มชื้นขึ้นมากค่ะ ใช้อาทิตย์เดียวเห็นผลเลย แถมโนวาตอบเร็วมาก ซื้อง่ายมากๆ"</p>
+      <div class="review-author">
+        <div class="review-avatar">พ</div>
+        <div><div class="review-name">พิมพ์</div><div class="review-tag">ลูกค้าประจำ ✓</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Sun Shield SPF50 กันแดดดีมากเลยค่ะ ทาแล้วไม่มัน ไม่เหนียว แถมราคาคุ้มมากๆ ซื้อสองขวดเลย 😊"</p>
+      <div class="review-author">
+        <div class="review-avatar">น</div>
+        <div><div class="review-name">นิด</div><div class="review-tag">ลูกค้าใหม่ ✓</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Sheet Mask ซื้อมาฝาก เพื่อนชอบมากเลย หน้าฉ่ำขึ้นชัดเจน บริการดี แชทถามแล้วโนวาตอบทันทีเลย ประทับใจค่ะ"</p>
+      <div class="review-author">
+        <div class="review-avatar">ก</div>
+        <div><div class="review-name">กิ๊ก</div><div class="review-tag">ลูกค้าประจำ ✓</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>LUMINA</strong> SKINCARE &nbsp;·&nbsp; ผิวเรืองแสง ทุกวัน<br>
+  <small style="margin-top:6px;display:block">Powered by <strong>NEO-S AI</strong> — AI Sales & Support ตลอด 24 ชั่วโมง</small>
+</footer>
+
+<!-- CART -->
+<div class="cart-indicator" id="cart-indicator" onclick="openOrder()">🛒 <span id="cart-count">0</span> รายการ</div>
+
+<!-- CHAT FAB -->
+<button class="chat-fab" onclick="toggleChat()" aria-label="เปิดแชท">
+  💬
+  <div class="chat-badge">1</div>
+</button>
+
+<!-- CHAT WINDOW -->
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-avatar">🌸</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">โนวา · LUMINA</div>
+      <div class="chat-header-status">🟢 พร้อมให้บริการค่ะ</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()" aria-label="ปิดแชท">✕</button>
+  </div>
+  <!-- API Key ถูกย้ายไปเก็บใน Cloudflare Worker Secret แล้ว — ปลอดภัย ✅ -->
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="quick-replies" id="quick-replies">
+    <button class="qr-btn" onclick="sendQuick('อยากดูสินค้าทั้งหมดค่ะ')">🛍️ ดูสินค้า</button>
+    <button class="qr-btn" onclick="sendQuick('แนะนำครีมบำรุงผิวหน้าหน่อยค่ะ')">✨ ครีมบำรุง</button>
+    <button class="qr-btn" onclick="sendQuick('ราคาครีมกันแดดเท่าไหร่คะ')">☀️ กันแดด</button>
+    <button class="qr-btn" onclick="sendQuick('สั่งซื้อยังไงคะ')">📦 วิธีสั่ง</button>
+  </div>
+  <!-- Slip preview bar (แสดงเมื่อมีรูปที่รอส่ง) -->
+  <div class="slip-preview-bar" id="slip-preview-bar">
+    <img id="slip-preview-img" src="" alt="สลิป">
+    <span class="slip-preview-name" id="slip-preview-name"></span>
+    <button class="slip-clear-btn" onclick="clearSlip()" title="ลบสลิป">✕</button>
+  </div>
+  <div class="chat-input-bar">
+    <!-- Hidden file input -->
+    <input type="file" id="slip-file-input" accept="image/*" style="display:none" onchange="onSlipSelected(event)">
+    <!-- Attach button -->
+    <button class="attach-btn" id="attach-btn"
+      onclick="document.getElementById('slip-file-input').click()"
+      title="แนบสลิปโอนเงิน" aria-label="แนบไฟล์">📎</button>
+    <textarea class="chat-input" id="chat-input" rows="1" placeholder="พิมพ์ถามโนวาได้เลยค่ะ..." onkeydown="handleKey(event)" aria-label="ช่องพิมพ์ข้อความ"></textarea>
+    <button class="send-btn" id="send-btn" onclick="sendMessage()" aria-label="ส่ง">➤</button>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="order-modal">
+  <div class="modal">
+    <h3>🛒 สรุปออเดอร์</h3>
+    <p id="order-summary-text">กำลังโหลด...</p>
+    <input type="text" id="order-name" placeholder="ชื่อ-นามสกุล">
+    <input type="text" id="order-phone" placeholder="เบอร์โทรศัพท์">
+    <input type="text" id="order-address" placeholder="ที่อยู่จัดส่ง">
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal()">ยกเลิก</button>
+      <button class="modal-confirm" onclick="confirmOrder()">✅ ยืนยันออเดอร์</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== SUPABASE CONFIG =====
+const SUPABASE_URL  = 'https://hdpjwegiorofmferhlhq.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkcGp3ZWdpb3JvZm1mZXJobGhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1Nzc0MzksImV4cCI6MjA5NTE1MzQzOX0.EeMA2b7MZDMYFN0G-7JOTj0g5ZSV1CQqfyMl7yWAI1o';
+const SB_HEADERS    = { 'apikey': SUPABASE_ANON, 'Authorization': `Bearer ${SUPABASE_ANON}`, 'Content-Type': 'application/json', 'Prefer': 'return=representation' };
+
+// helper: เรียก Supabase REST API
+async function sbFetch(path, options = {}) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: SB_HEADERS, ...options });
+  return res.ok ? res.json() : Promise.reject(await res.json());
+}
+
+// ===== PRODUCT DATA (fallback ถ้า Supabase ไม่ตอบ) =====
+const PRODUCTS = [
+  { id: 'P001', cat: 'cream', emoji: '🧴', name: 'Hydra Glow Cream', desc: 'ครีมบำรุงผิวหน้า ให้ความชุ่มชื้น 24 ชม. ผสม Hyaluronic Acid', price: 690, size: '50ml' },
+  { id: 'P002', cat: 'cream', emoji: '✨', name: 'Vitamin C Brightening Serum', desc: 'เซรั่มวิตามินซี เข้มข้น 15% ช่วยผิวกระจ่างใสขึ้นใน 2 สัปดาห์', price: 890, size: '30ml' },
+  { id: 'P003', cat: 'cleanser', emoji: '🫧', name: 'Gentle Foam Cleanser', desc: 'โฟมล้างหน้าอ่อนโยน ไม่แห้งตึง เหมาะกับทุกสภาพผิว', price: 490, size: '150ml' },
+  { id: 'P004', cat: 'cleanser', emoji: '💧', name: 'Micellar Cleansing Water', desc: 'ไมเซลล่าวอเตอร์ ล้างเครื่องสำอางสะอาดหมดจด ไม่ต้องล้างน้ำตาม', price: 390, size: '250ml' },
+  { id: 'P005', cat: 'sun', emoji: '☀️', name: 'Sun Shield SPF50+ PA++++', desc: 'กันแดดสูตรเบา ไม่มัน ไม่เหนียว ปกป้อง UVA/UVB เต็มประสิทธิภาพ', price: 590, size: '50ml' },
+  { id: 'P006', cat: 'sun', emoji: '🌤️', name: 'Airy UV Fluid SPF30', desc: 'กันแดดเนื้อบาง ซึมเร็ว สำหรับใช้ในร่ม เหมาะกับผิวมัน', price: 450, size: '40ml' },
+  { id: 'P007', cat: 'mask', emoji: '🌿', name: 'Glow Sheet Mask Set', desc: 'แผ่นมาส์กหน้า เนื้อ Bio-Cellulose ชุ่มฉ่ำ ผิวกระจ่างใสใน 20 นาที', price: 590, size: '10 แผ่น' },
+  { id: 'P008', cat: 'mask', emoji: '🌙', name: 'Overnight Glow Sleeping Mask', desc: 'สลีปปิ้งมาส์ก ทาก่อนนอน ฟื้นฟูผิวขณะหลับ ตื่นมาผิวนุ่มสวย', price: 750, size: '80ml' },
+];
+
+let cart = [];
+let chatOpen = false;
+let isLoading = false;
+// 🔒 เรียก Cloudflare Worker Proxy — API Key ซ่อนอยู่ใน Worker Secret (ปลอดภัย ✅)
+const API_URL = 'https://lumina-proxy.kritsada-nutt1981.workers.dev';
+
+// ===== CONVERSATION HISTORY (สำหรับ Nova จำบทสนทนา) =====
+let conversationHistory = [];
+const MAX_HISTORY = 6; // เก็บย้อนหลัง 6 รอบ (6 คู่ = 12 messages)
+
+// ===== MOBILE NAV =====
+function toggleNav() { document.getElementById('nav-links').classList.toggle('open'); }
+function closeNav() { document.getElementById('nav-links').classList.remove('open'); }
+
+// ===== LOAD PRODUCTS FROM SUPABASE =====
+async function loadProducts() {
+  try {
+    const data = await sbFetch('products?select=*&active=eq.true&order=product_id');
+    if (data && data.length > 0) {
+      window._sbProducts = data.map(p => ({
+        id: p.product_id,
+        cat: p.category,
+        emoji: { cream: '🧴', cleanser: '🫧', sunscreen: '☀️', mask: '🌿' }[p.category] || '✨',
+        name: p.name,
+        desc: p.description || '',
+        price: Number(p.price),
+        size: p.name.match(/\d+\s*\w+$/)?.[0] || ''
+      }));
+      renderProducts('all', window._sbProducts);
+      return;
+    }
+  } catch(e) {
+    console.warn('Supabase load failed, using local data:', e.message);
+  }
+  renderProducts(); // fallback ใช้ข้อมูลใน code
+}
+
+// ===== RENDER PRODUCTS =====
+function renderProducts(filter = 'all', source) {
+  const grid = document.getElementById('products-grid');
+  const list = source || PRODUCTS;
+  const items = filter === 'all' ? list : list.filter(p => p.cat === filter);
+  grid.innerHTML = items.map(p => `
+    <div class="product-card" data-cat="${p.cat}">
+      <span class="product-emoji">${p.emoji}</span>
+      <div class="product-cat">${getCatLabel(p.cat)}</div>
+      <div class="product-name">${p.name}</div>
+      <div class="product-desc">${p.desc}</div>
+      <div class="product-footer">
+        <div class="product-price">฿${p.price.toLocaleString()} <small>/ ${p.size}</small></div>
+        <button class="add-btn" onclick="addToCart('${p.id}')">+ ใส่ตะกร้า</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function getCatLabel(cat) {
+  return { cream: 'ครีมบำรุง', cleanser: 'คลีนเซอร์', sun: 'กันแดด', mask: 'มาส์กหน้า' }[cat] || cat;
+}
+
+function filterCat(btn, cat) {
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat, window._sbProducts || null);
+}
+
+// ===== CART =====
+function addToCart(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  const existing = cart.find(x => x.id === id);
+  if (existing) existing.qty++;
+  else cart.push({ ...p, qty: 1 });
+  updateCartUI();
+
+  // Notify Nova
+  const msg = `อยากสั่ง ${p.name} จำนวน 1 ชิ้น ราคา ฿${p.price} ค่ะ`;
+  if (!chatOpen) toggleChat();
+  setTimeout(() => sendMessage(msg), 300);
+}
+
+function updateCartUI() {
+  const total = cart.reduce((s, x) => s + x.qty, 0);
+  const indicator = document.getElementById('cart-indicator');
+  document.getElementById('cart-count').textContent = total;
+  indicator.style.display = total > 0 ? 'block' : 'none';
+}
+
+function openOrder() {
+  const text = cart.map(x => `• ${x.name} x${x.qty} = ฿${(x.price * x.qty).toLocaleString()}`).join('\n');
+  const total = cart.reduce((s, x) => s + x.price * x.qty, 0);
+  document.getElementById('order-summary-text').innerHTML =
+    cart.map(x => `<div>• ${x.name} x${x.qty} — ฿${(x.price*x.qty).toLocaleString()}</div>`).join('') +
+    `<div style="margin-top:10px;font-weight:700;color:var(--rose-d)">รวม ฿${total.toLocaleString()}</div><br>กรอกข้อมูลจัดส่งด้านล่างค่ะ`;
+  document.getElementById('order-modal').classList.add('open');
+}
+
+function closeModal() { document.getElementById('order-modal').classList.remove('open'); }
+
+async function confirmOrder() {
+  const name    = document.getElementById('order-name').value.trim();
+  const phone   = document.getElementById('order-phone').value.trim();
+  const address = document.getElementById('order-address').value.trim();
+  if (!name || !phone || !address) { alert('กรุณากรอกข้อมูลให้ครบค่ะ'); return; }
+
+  const total    = cart.reduce((s, x) => s + x.price * x.qty, 0);
+  const custId   = 'CUST-' + Date.now().toString(16).toUpperCase();
+  const orderId  = 'ORD-'  + Math.random().toString(16).slice(2,10).toUpperCase();
+  pendingOrderId = orderId; // เก็บไว้เพื่อส่งพร้อมสลิปในภายหลัง
+  const orderItems = cart.map(x => ({ product_id: x.id, name: x.name, qty: x.qty, price: x.price }));
+
+  closeModal();
+
+  // บันทึกลง Supabase
+  try {
+    // 1. สร้าง/อัปเดต customer
+    await sbFetch('customers', {
+      method: 'POST',
+      body: JSON.stringify({ customer_id: custId, name, phone, address })
+    });
+    // 2. สร้าง order
+    await sbFetch('orders', {
+      method: 'POST',
+      body: JSON.stringify({
+        order_id: orderId,
+        customer_id: custId,
+        items: orderItems,
+        total_amount: total,
+        shipping_address: address,
+        status: 'ORDER_CREATED'
+      })
+    });
+    console.log('✅ Order saved to Supabase:', orderId);
+  } catch(e) {
+    console.warn('⚠️ Supabase save failed:', e);
+  }
+
+  // ส่งข้อความให้ Nova
+  const orderMsg = `สั่งซื้อค่ะ ออเดอร์ ${orderId} — ชื่อ: ${name} โทร: ${phone} จัดส่งที่: ${address} ยอดรวม ฿${total.toLocaleString()} ขอทราบช่องทางชำระเงินด้วยค่ะ`;
+  if (!chatOpen) toggleChat();
+  setTimeout(() => sendMessage(orderMsg), 300);
+}
+
+// ===== CHAT =====
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const win = document.getElementById('chat-window');
+  win.classList.toggle('open', chatOpen);
+  if (chatOpen && document.getElementById('chat-messages').children.length === 0) {
+    conversationHistory = []; // reset ประวัติเมื่อเริ่ม chat ใหม่
+    addBotMsg('สวัสดีค่ะ 🌸 โนวายินดีต้อนรับสู่ LUMINA Skincare นะคะ\n\nวันนี้สนใจผลิตภัณฑ์ดูแลผิวตัวไหนเป็นพิเศษไหมคะ? โนวาพร้อมแนะนำค่ะ ✨');
+  }
+}
+
+function addBotMsg(text) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'msg bot';
+  div.innerHTML = `
+    <div class="msg-avatar">🌸</div>
+    <div>
+      <div class="msg-name">โนวา · LUMINA</div>
+      <div class="msg-bubble">${text.replace(/\n/g,'<br>')}</div>
+    </div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addUserMsg(text) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'msg user';
+  div.innerHTML = `<div class="msg-bubble">${text}</div><div class="msg-avatar">👤</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addUserMsgWithSlip(text, imgSrc) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'msg user';
+  div.innerHTML = `<div class="msg-bubble">${text}<br><img src="${imgSrc}" style="max-width:180px;max-height:180px;border-radius:10px;margin-top:8px;display:block;border:1px solid rgba(255,255,255,0.3)"></div><div class="msg-avatar">👤</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'msg bot'; div.id = 'typing-indicator';
+  div.innerHTML = `<div class="msg-avatar">🌸</div><div class="msg-bubble" style="padding:14px 16px"><div class="typing"><span></span><span></span><span></span></div></div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typing-indicator');
+  if (t) t.remove();
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+}
+
+function sendQuick(text) {
+  document.getElementById('chat-input').value = text;
+  sendMessage();
+}
+
+// ===== SLIP UPLOAD =====
+let pendingSlipFileId = null;
+let pendingOrderId = null; // เก็บ order_id ล่าสุดเพื่อส่งพร้อมสลิป
+let pendingSlipPreviewUrl = null; // เก็บ base64 preview เพื่อแสดงในแชท
+const UPLOAD_URL = 'https://lumina-proxy.kritsada-nutt1981.workers.dev/upload';
+
+async function onSlipSelected(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  // ตรวจสอบประเภทไฟล์
+  if (!file.type.startsWith('image/')) {
+    addBotMsg('❌ กรุณาเลือกไฟล์รูปภาพค่ะ (JPG, PNG, GIF)');
+    return;
+  }
+
+  // แสดง preview ทันที
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    pendingSlipPreviewUrl = e.target.result; // เก็บไว้แสดงในแชท
+    document.getElementById('slip-preview-img').src = e.target.result;
+    document.getElementById('slip-preview-bar').style.display = 'flex';
+  };
+  reader.readAsDataURL(file);
+  document.getElementById('slip-preview-name').textContent = '⏳ กำลังอัปโหลด...';
+
+  // Upload ไปยัง Dify ผ่าน Cloudflare Worker /upload
+  const formData = new FormData();
+  formData.append('file', file, file.name);
+  formData.append('user', 'lumina-demo-user');
+
+  try {
+    const resp = await fetch(UPLOAD_URL, {
+      method: 'POST',
+      body: formData
+      // ไม่ set Content-Type → browser จัดการ multipart boundary เอง
+    });
+    const data = await resp.json();
+
+    if (resp.ok && data.id) {
+      pendingSlipFileId = data.id;
+      document.getElementById('slip-preview-name').textContent = `✅ ${file.name} — พร้อมส่งแล้วค่ะ`;
+      // Auto-fill ช่องพิมพ์ถ้ายังว่างอยู่
+      const input = document.getElementById('chat-input');
+      if (!input.value.trim()) input.value = 'ส่งสลิปการโอนเงินค่ะ';
+    } else {
+      console.error('Upload failed:', data);
+      addBotMsg('❌ อัปโหลดสลิปไม่สำเร็จค่ะ กรุณาลองใหม่นะคะ');
+      clearSlip();
+    }
+  } catch (e) {
+    console.error('Upload error:', e);
+    addBotMsg('❌ เกิดข้อผิดพลาดในการอัปโหลด: ' + e.message);
+    clearSlip();
+  }
+}
+
+function clearSlip() {
+  pendingSlipFileId = null;
+  pendingSlipPreviewUrl = null;
+  document.getElementById('slip-file-input').value = '';
+  document.getElementById('slip-preview-bar').style.display = 'none';
+  document.getElementById('slip-preview-img').src = '';
+  document.getElementById('slip-preview-name').textContent = '';
+}
+
+async function sendMessage(overrideText) {
+  const input = document.getElementById('chat-input');
+  const text = overrideText || input.value.trim();
+  if (!text || isLoading) return;
+  input.value = '';
+  isLoading = true;
+  document.getElementById('send-btn').disabled = true;
+  document.getElementById('quick-replies').style.display = 'none';
+
+  // แสดงรูปสลิปในกล่องแชทถ้ามี
+  if (pendingSlipPreviewUrl) {
+    addUserMsgWithSlip(text, pendingSlipPreviewUrl);
+  } else {
+    addUserMsg(text);
+  }
+  addTyping();
+
+  try {
+    // สร้าง context จากประวัติสนทนาก่อนหน้า (จำกัด 480 ตัวอักษรรวม)
+    const MAX_CHARS = 480;
+    let messageWithContext = text;
+    if (conversationHistory.length > 0) {
+      const header = `[ประวัติสนทนา]\n`;
+      const footer = `\n[ลูกค้า]: ${text}`;
+      const budget = MAX_CHARS - header.length - footer.length;
+      // ใส่ประวัติจากใหม่สุดไปเก่าสุด จนเต็ม budget
+      let historyLines = [];
+      for (let i = conversationHistory.length - 1; i >= 0; i--) {
+        const h = conversationHistory[i];
+        const botShort = h.bot.length > 80 ? h.bot.substring(0, 80) + '...' : h.bot;
+        const line = `ลูกค้า: ${h.user}\nโนวา: ${botShort}`;
+        const candidate = [line, ...historyLines].join('\n');
+        if (candidate.length <= budget) historyLines.unshift(line);
+        else break;
+      }
+      if (historyLines.length > 0) {
+        messageWithContext = header + historyLines.join('\n') + footer;
+      }
+    }
+
+    // สร้าง request body (รวม slip file ถ้ามี)
+    const requestBody = {
+      inputs: { customer_message: messageWithContext },
+      response_mode: 'blocking',
+      user: 'lumina-demo-user'
+    };
+    if (pendingSlipFileId) {
+      // ส่ง slip_url ใน inputs ให้ Dify workflow T6 node รับได้
+      requestBody.inputs.slip_url = `dify-file://${pendingSlipFileId}`;
+      // ส่ง order_id ถ้ามีออเดอร์รออยู่
+      if (pendingOrderId) requestBody.inputs.order_id = pendingOrderId;
+      requestBody.files = [{
+        type: 'image',
+        transfer_method: 'local_file',
+        upload_file_id: pendingSlipFileId
+      }];
+      pendingOrderId = null; // ล้าง order_id หลังส่งสลิปแล้ว
+      clearSlip(); // ล้าง pending slip ทันทีหลังส่ง
+    }
+
+    const resp = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }, // Authorization อยู่ใน Worker แล้ว
+      body: JSON.stringify(requestBody)
+    });
+    const data = await resp.json();
+    removeTyping();
+
+    if (!resp.ok) {
+      addBotMsg(`❌ API Error: ${data.message || resp.status}`);
+    } else {
+      let reply = '';
+      const outputs = data?.data?.outputs || data?.outputs || {};
+      // ถ้า Dify ส่ง order_id กลับมา (จาก End — Chat node) ให้เก็บไว้รอสลิป
+      if (outputs.order_id) pendingOrderId = outputs.order_id;
+      const rawOutput = outputs.output || outputs.text || data?.data?.text || '';
+      // Fallback: ถ้า Dify ไม่ return order_id แต่ Nova ตอบยืนยันออเดอร์แล้ว → สร้าง order_id ฝั่ง client
+      if (!pendingOrderId && (rawOutput.includes('รับออเดอร์') || rawOutput.includes('ยอดรวม') && rawOutput.includes('PromptPay'))) {
+        pendingOrderId = 'ORD-' + Date.now();
+      }
+      // Strip "output:" prefix and extract response field
+      const responseMatch = rawOutput.match(/response:\s*([\s\S]+)/i);
+      reply = responseMatch ? responseMatch[1].trim() : rawOutput.replace(/^output:\s*/i, '').replace(/^intent:\s*\S+\s*/i, '').trim();
+      if (!reply) reply = 'ขออภัยค่ะ โนวาไม่ได้รับข้อมูลตอบกลับ กรุณาลองใหม่อีกครั้งนะคะ';
+      addBotMsg(reply);
+
+      // บันทึกประวัติสนทนา (เก็บแค่ข้อความจริง ไม่เก็บ context ที่ส่งไป)
+      conversationHistory.push({ user: text, bot: reply });
+      if (conversationHistory.length > MAX_HISTORY) conversationHistory.shift();
+    }
+  } catch (err) {
+    removeTyping();
+    addBotMsg(`❌ เกิดข้อผิดพลาด: ${err.message}`);
+  }
+
+  isLoading = false;
+  document.getElementById('send-btn').disabled = false;
+}
+
+// ===== INIT =====
+loadProducts(); // โหลดจาก Supabase (fallback → PRODUCTS array)
+</script>
+</body>
+</html>
