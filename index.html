@@ -712,19 +712,23 @@ function filterCat(btn, cat) {
 }
 
 function askAbout(name) {
-  // เปิดแชทถ้ายังไม่เปิด — Dify iframe จะรับ context ผ่าน URL พารามิเตอร์ไม่ได้ตรง ๆ
-  // ดังนั้นแค่เปิดแชทแล้ว copy คำถามให้ผู้ใช้
-  toggleChat();
   const msg = `ขอข้อมูล${name} หน่อยค่ะ`;
-  // ลอง copy ไปยัง clipboard อัตโนมัติ
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(msg).then(
-      () => showHint(`📋 Copy แล้ว — วางในช่องแชทได้เลย:\n"${msg}"`),
-      () => showHint(`พิมพ์ในแชทว่า:\n"${msg}"`)
-    );
-  } else {
-    showHint(`พิมพ์ในแชทว่า:\n"${msg}"`);
-  }
+  // Copy คำถามเข้า clipboard ก่อนเสมอ
+  const copyPromise = navigator.clipboard
+    ? navigator.clipboard.writeText(msg).then(() => true).catch(() => false)
+    : Promise.resolve(false);
+
+  copyPromise.then(copied => {
+    if (isMobile()) {
+      // มือถือ: แสดง hint แล้วเปิดแชทเป็นแท็บใหม่
+      if (copied) showHint(`📋 Copy คำถามแล้ว — กำลังเปิดแชท...`);
+      setTimeout(() => toggleChat(), 800);
+    } else {
+      // เดสก์ทอป: เปิด chat window พร้อม hint
+      toggleChat();
+      showHint(copied ? `📋 Copy แล้ว — วางในช่องแชทได้เลย:\n"${msg}"` : `พิมพ์ในแชทว่า:\n"${msg}"`);
+    }
+  });
 }
 
 function showHint(text) {
@@ -737,7 +741,18 @@ function showHint(text) {
 }
 
 // ===== CHAT =====
+function isMobile() {
+  return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function toggleChat() {
+  // ✅ บนมือถือ: เปิด Dify chat เป็นแท็บใหม่ (เลี่ยงปัญหา iframe + keyboard + bottom bar)
+  if (isMobile()) {
+    window.open(DIFY_CHAT_URL, '_blank', 'noopener,noreferrer');
+    return;
+  }
+
+  // เดสก์ทอป: เปิด chat window พร้อม iframe
   chatOpen = !chatOpen;
   const win = document.getElementById('chat-window');
   win.classList.toggle('open', chatOpen);
