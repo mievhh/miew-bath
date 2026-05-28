@@ -170,7 +170,6 @@
       border-color: var(--aqua);
     }
     .product-emoji { font-size: 44px; margin-bottom: 14px; }
-    .product-sku { font-size: 10px; letter-spacing: 2px; color: var(--gold); font-weight: 700; margin-bottom: 4px; }
     .product-cat { font-size: 10px; letter-spacing: 2px; color: var(--aqua-d); text-transform: uppercase; margin-bottom: 6px; }
     .product-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
     .product-name-en { font-size: 11px; color: var(--text-s); margin-bottom: 8px; font-style: italic; }
@@ -308,7 +307,12 @@
     .chat-close:hover { opacity: 1; }
 
     .chat-frame {
-      flex: 1; border: none; width: 100%; background: white;
+      flex: 1 1 auto;
+      min-height: 0;
+      border: none;
+      width: 100%;
+      background: white;
+      display: block;
     }
     .chat-loading {
       flex: 1; display: flex; flex-direction: column;
@@ -353,9 +357,25 @@
       .product-price { font-size: 16px; }
 
       .chat-window {
-        bottom: 0; right: 0; left: 0;
-        width: 100%; height: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100vh;
+        max-height: 100dvh;
         border-radius: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .chat-header { flex-shrink: 0; }
+      .chat-loading { flex: 1; min-height: 0; }
+      .chat-frame {
+        flex: 1 1 auto;
+        min-height: 0;
+        height: auto;
       }
       .chat-fab { bottom: 20px; right: 20px; width: 56px; height: 56px; font-size: 24px; }
     }
@@ -672,10 +692,7 @@ function renderProducts(filter = 'all') {
   const items = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === filter);
   grid.innerHTML = items.map(p => `
     <div class="product-card">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start">
-        <span class="product-emoji">${p.emoji}</span>
-        <span class="product-sku">${p.sku}</span>
-      </div>
+      <span class="product-emoji">${p.emoji}</span>
       <div class="product-cat">${p.catLabel}</div>
       <div class="product-name">${p.name}</div>
       <div class="product-name-en">${p.nameEn}</div>
